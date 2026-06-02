@@ -39,9 +39,9 @@
   .game-body{display:flex;gap:0;background:linear-gradient(180deg,#1c0a0e,#14080b);border:3px solid;border-image:linear-gradient(180deg,#cc3355,#661122) 1;border-top:none;padding:5px 6px 4px;position:relative;box-shadow:0 0 40px rgba(255,30,60,0.3),inset 0 0 50px rgba(0,0,0,0.5);}
   .game-body::before{content:'';position:absolute;top:4px;left:8px;right:8px;height:2px;background:linear-gradient(90deg,#666,#aaa,#666);border-radius:2px;}
 
-  .side-panel{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:72px;padding:0 2px;}
+  .side-panel{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:80px;padding:0 3px;overflow:visible;}
   .panel-label{font-size:9px;color:#ff8899;letter-spacing:2px;text-align:center;text-shadow:0 0 6px rgba(255,40,80,0.5);}
-  .panel-box{width:72px;height:58px;background:rgba(0,0,0,0.5);border:2px solid #882244;border-radius:4px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 14px rgba(0,0,0,0.6),0 0 8px rgba(255,40,80,0.12);}
+  .panel-box{width:80px;height:64px;background:rgba(0,0,0,0.5);border:2px solid #882244;border-radius:4px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 14px rgba(0,0,0,0.6),0 0 8px rgba(255,40,80,0.12);}
   .panel-box canvas{display:block;}
 
   .board-wrapper{position:relative;padding:3px;background:linear-gradient(180deg,#3a3a3a,#222,#111);border:3px solid;border-image:linear-gradient(135deg,#888,#ccc 20%,#666 40%,#ddd 60%,#999 80%,#555) 1;border-radius:4px;margin:0 2px;box-shadow:0 0 28px rgba(255,30,60,0.3),inset 0 1px 4px rgba(255,255,255,0.05),0 6px 16px rgba(0,0,0,0.7);}
@@ -105,7 +105,7 @@
     <!-- HOLD -->
     <div class="side-panel">
       <div class="panel-label">HOLD</div>
-      <div class="panel-box"><canvas id="holdCanvas" width="72" height="58"></canvas></div>
+      <div class="panel-box"><canvas id="holdCanvas" width="80" height="64"></canvas></div>
       <div class="panel-label" style="font-size:7px;color:#884455;">C HOLD</div>
     </div>
 
@@ -133,7 +133,7 @@
     <!-- 右侧信息 -->
     <div class="info-panel">
       <div class="panel-label" style="font-size:7px;">NEXT</div>
-      <div class="panel-box"><canvas id="nextCanvas" width="72" height="58"></canvas></div>
+      <div class="panel-box"><canvas id="nextCanvas" width="80" height="64"></canvas></div>
       <div class="stat-block"><div class="stat-label">SCORE</div><div class="stat-value" id="score">0</div></div>
       <div class="stat-block" id="sprintBlock" style="display:none;"><div class="stat-label" style="color:#ffd600;">⏱ TIME</div><div class="stat-value" id="sprintTime" style="font-size:10px;">0:00.0</div></div>
       <div class="stat-block"><div class="stat-label">LEVEL</div><div class="stat-value" id="level">1</div></div>
