@@ -50,10 +50,10 @@
   .screw.tl{top:-3px;left:-3px;}.screw.tr{top:-3px;right:-3px;}.screw.bl{bottom:-3px;left:-3px;}.screw.br{bottom:-3px;right:-3px;}
   #gameCanvas{display:block;border-radius:1px;}
 
-  .info-panel{display:flex;flex-direction:column;gap:4px;min-width:96px;padding:0 2px;}
+  .info-panel{display:flex;flex-direction:column;gap:5px;min-width:100px;padding:0 2px;}
   .stat-block{background:rgba(0,0,0,0.5);border:2px solid #661133;border-radius:4px;padding:4px 3px;text-align:center;box-shadow:inset 0 0 10px rgba(0,0,0,0.5);}
-  .stat-label{font-size:4px;color:#cc6677;letter-spacing:1px;margin-bottom:2px;}
-  .stat-value{font-size:9px;color:#fff;text-shadow:0 0 8px #ff4466,0 0 16px #ff2244;line-height:1.2;}
+  .stat-label{font-size:5.5px;color:#cc6677;letter-spacing:1px;margin-bottom:3px;}
+  .stat-value{font-size:11px;color:#fff;text-shadow:0 0 8px #ff4466,0 0 16px #ff2244;line-height:1.2;}
   .stat-value.combo-active{color:#ffd600;text-shadow:0 0 14px #ffd600,0 0 28px #ff9100;animation:comboPulse .5s ease-out;}
   @keyframes comboPulse{0%{transform:scale(1.4)}100%{transform:scale(1)}}
 
@@ -134,13 +134,13 @@
     <div class="info-panel">
       <div class="panel-label" style="font-size:7px;">NEXT</div>
       <div class="panel-box"><canvas id="nextCanvas" width="72" height="58"></canvas></div>
-      <div class="stat-block"><div class="stat-label">得 分</div><div class="stat-value" id="score">0</div></div>
-      <div class="stat-block" id="sprintBlock" style="display:none;"><div class="stat-label" style="color:#ffd600;">⏱ 用时</div><div class="stat-value" id="sprintTime" style="font-size:10px;">0:00.0</div></div>
-      <div class="stat-block"><div class="stat-label">等 级</div><div class="stat-value" id="level">1</div></div>
-      <div class="stat-block"><div class="stat-label">消除行数</div><div class="stat-value" id="lines">0</div></div>
-      <div class="stat-block"><div class="stat-label">连 击</div><div class="stat-value" id="combo" style="font-size:9px;">-</div></div>
-      <div class="stat-block"><div class="stat-label">最高分</div><div class="stat-value" id="highScore" style="font-size:8px;text-shadow:0 0 8px #ffd600,0 0 16px #ff9100;">0</div></div>
-      <div class="stat-block" id="sprintBestBlock" style="display:none;"><div class="stat-label" style="color:#ffd600;">🏆 最佳</div><div class="stat-value" id="sprintBest" style="font-size:8px;text-shadow:0 0 8px #ffd600;">-</div></div>
+      <div class="stat-block"><div class="stat-label">SCORE</div><div class="stat-value" id="score">0</div></div>
+      <div class="stat-block" id="sprintBlock" style="display:none;"><div class="stat-label" style="color:#ffd600;">⏱ TIME</div><div class="stat-value" id="sprintTime" style="font-size:10px;">0:00.0</div></div>
+      <div class="stat-block"><div class="stat-label">LEVEL</div><div class="stat-value" id="level">1</div></div>
+      <div class="stat-block"><div class="stat-label">LINES</div><div class="stat-value" id="lines">0</div></div>
+      <div class="stat-block"><div class="stat-label">COMBO</div><div class="stat-value" id="combo" style="font-size:10px;">-</div></div>
+      <div class="stat-block"><div class="stat-label">BEST</div><div class="stat-value" id="highScore" style="font-size:9px;text-shadow:0 0 8px #ffd600,0 0 16px #ff9100;">0</div></div>
+      <div class="stat-block" id="sprintBestBlock" style="display:none;"><div class="stat-label" style="color:#ffd600;">🏆 BEST</div><div class="stat-value" id="sprintBest" style="font-size:9px;text-shadow:0 0 8px #ffd600;">-</div></div>
     </div>
   </div>
 
