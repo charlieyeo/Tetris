@@ -40,7 +40,7 @@
   .game-body::before{content:'';position:absolute;top:4px;left:8px;right:8px;height:2px;background:linear-gradient(90deg,#666,#aaa,#666);border-radius:2px;}
 
   .side-panel{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:72px;padding:0 2px;}
-  .panel-label{font-size:5px;color:#ff8899;letter-spacing:2px;text-align:center;text-shadow:0 0 6px rgba(255,40,80,0.5);}
+  .panel-label{font-size:9px;color:#ff8899;letter-spacing:2px;text-align:center;text-shadow:0 0 6px rgba(255,40,80,0.5);}
   .panel-box{width:72px;height:58px;background:rgba(0,0,0,0.5);border:2px solid #882244;border-radius:4px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 14px rgba(0,0,0,0.6),0 0 8px rgba(255,40,80,0.12);}
   .panel-box canvas{display:block;}
 
@@ -51,9 +51,9 @@
   #gameCanvas{display:block;border-radius:1px;}
 
   .info-panel{display:flex;flex-direction:column;gap:5px;min-width:100px;padding:0 2px;}
-  .stat-block{background:rgba(0,0,0,0.5);border:2px solid #661133;border-radius:4px;padding:4px 3px;text-align:center;box-shadow:inset 0 0 10px rgba(0,0,0,0.5);}
-  .stat-label{font-size:5.5px;color:#cc6677;letter-spacing:1px;margin-bottom:3px;}
-  .stat-value{font-size:11px;color:#fff;text-shadow:0 0 8px #ff4466,0 0 16px #ff2244;line-height:1.2;}
+  .stat-block{background:rgba(0,0,0,0.5);border:2px solid #661133;border-radius:4px;padding:5px 4px;text-align:center;box-shadow:inset 0 0 10px rgba(0,0,0,0.5);}
+  .stat-label{font-size:11px;color:#cc6677;letter-spacing:1px;margin-bottom:4px;}
+  .stat-value{font-size:14px;color:#fff;text-shadow:0 0 8px #ff4466,0 0 16px #ff2244;line-height:1.2;}
   .stat-value.combo-active{color:#ffd600;text-shadow:0 0 14px #ffd600,0 0 28px #ff9100;animation:comboPulse .5s ease-out;}
   @keyframes comboPulse{0%{transform:scale(1.4)}100%{transform:scale(1)}}
 
@@ -63,7 +63,7 @@
   @keyframes comboFly{0%{opacity:1;transform:translate(-50%,-50%) scale(0.5)}30%{opacity:1;transform:translate(-50%,-60%) scale(1.3)}100%{opacity:0;transform:translate(-50%,-120%) scale(1)}}
 
   /* 控制栏 */
-  .control-bar{background:linear-gradient(180deg,#14080b,#1c0a0e);border:2px solid;border-image:linear-gradient(180deg,#661122,#cc3355) 1;border-top:none;border-radius:0 0 6px 6px;padding:4px 10px;display:flex;gap:10px;justify-content:center;font-size:5px;color:#996670;letter-spacing:0.5px;box-shadow:0 3px 12px rgba(0,0,0,0.5);}
+  .control-bar{background:linear-gradient(180deg,#14080b,#1c0a0e);border:2px solid;border-image:linear-gradient(180deg,#661122,#cc3355) 1;border-top:none;border-radius:0 0 6px 6px;padding:5px 12px;display:flex;gap:12px;justify-content:center;font-size:7px;color:#996670;letter-spacing:1px;box-shadow:0 3px 12px rgba(0,0,0,0.5);}
   .control-bar span{color:#cc6677;}
 
   /* 覆盖层 */
@@ -90,7 +90,7 @@
 <div class="arcade-cabinet">
   <div class="marquee">
     <h1>TETRIS</h1>
-    <div class="subtitle" id="marqueeSub">■ 街机对战风格 ■</div>
+    <div class="subtitle" id="marqueeSub">■ ARCADE EDITION ■</div>
     <button class="vol-btn" id="volBtn" title="静音切换">🔊</button>
   </div>
 
@@ -106,7 +106,7 @@
     <div class="side-panel">
       <div class="panel-label">HOLD</div>
       <div class="panel-box"><canvas id="holdCanvas" width="72" height="58"></canvas></div>
-      <div class="panel-label" style="font-size:5px;color:#884455;">C 储存</div>
+      <div class="panel-label" style="font-size:7px;color:#884455;">C HOLD</div>
     </div>
 
     <!-- 游戏区 -->
@@ -123,10 +123,10 @@
       <div class="overlay hidden" id="overlayGameOver">
         <div class="overlay-title" id="overlayTitle">GAME OVER</div>
         <div class="rank-badge" id="rankBadge"></div>
-        <div class="overlay-score" id="finalScore">最终得分: 0</div>
+        <div class="overlay-score" id="finalScore">Score: 0</div>
         <div class="overlay-detail" id="finalDetail"></div>
-        <button class="btn btn-restart" id="btnRestart">重新开始</button>
-        <div style="font-size:6px;color:#996670;margin-top:10px;">空格 / R 重新开始</div>
+        <button class="btn btn-restart" id="btnRestart">RESTART</button>
+        <div style="font-size:7px;color:#996670;margin-top:8px;">SPACE / R to restart</div>
       </div>
     </div>
 
@@ -145,12 +145,12 @@
   </div>
 
   <div class="control-bar">
-    <span>← →</span>移动 &nbsp;|&nbsp;
-    <span>↑ X</span>旋转 &nbsp;|&nbsp;
-    <span>↓</span>加速 &nbsp;|&nbsp;
-    <span>空格</span>硬降 &nbsp;|&nbsp;
+    <span>← →</span>MOVE &nbsp;|&nbsp;
+    <span>↑ X</span>ROTATE &nbsp;|&nbsp;
+    <span>↓</span>SOFT DROP &nbsp;|&nbsp;
+    <span>SPACE</span>HARD DROP &nbsp;|&nbsp;
     <span>C</span>HOLD &nbsp;|&nbsp;
-    <span>P</span>暂停
+    <span>P</span>PAUSE
   </div>
 </div>
 
@@ -351,9 +351,9 @@ function clearLines(isTSpin=false){
       if(t<sprintBestTime){sprintBestTime=t;try{localStorage.setItem('tetris_sprint_best',t);}catch(e){}}
       const ov=document.getElementById('overlayGameOver');
       ov.classList.remove('hidden');
-      document.getElementById('overlayTitle').textContent='🏆 通关!';
-      document.getElementById('finalScore').textContent='用时: '+fmtTime(t);
-      document.getElementById('finalDetail').innerHTML='消除: '+lines+' 行 &nbsp;|&nbsp; 连击: '+maxCombo+'x<br>最佳记录: '+fmtTime(sprintBestTime);
+      document.getElementById('overlayTitle').textContent='🏆 CLEAR!';
+      document.getElementById('finalScore').textContent='Time: '+fmtTime(t);
+      document.getElementById('finalDetail').innerHTML='Lines: '+lines+' &nbsp;|&nbsp; Combo: '+maxCombo+'x<br>Best: '+fmtTime(sprintBestTime);
       document.getElementById('rankBadge').textContent=fmtTime(t);
       document.getElementById('rankBadge').className='rank-badge S';
       AE.stopBGM();AE.playSprintComplete();updateStats();return;
@@ -380,11 +380,11 @@ function triggerGameOver(){
   ov.classList.remove('hidden');
   document.getElementById('overlayTitle').textContent='GAME OVER';
   if(gameMode==='sprint'&&!sprintComplete){
-    document.getElementById('finalScore').textContent='未完成 40 行';
+    document.getElementById('finalScore').textContent='40 Lines - Failed';
   }else{
-    document.getElementById('finalScore').textContent='最终得分: '+score.toLocaleString();
+    document.getElementById('finalScore').textContent='Score: '+score.toLocaleString();
   }
-  document.getElementById('finalDetail').innerHTML='等级:'+level+' | 消除:'+lines+' 行<br>最大连击:'+maxCombo+'x | Tetris:'+tetrisCount+' 次<br>'+'All Clear:'+allClearCount+' 次 | 最高分:'+highScore.toLocaleString();
+  document.getElementById('finalDetail').innerHTML='Level:'+level+' | Lines:'+lines+'<br>Combo:'+maxCombo+'x | Tetris:'+tetrisCount+'<br>All Clear:'+allClearCount+' | Best:'+highScore.toLocaleString();
   const badge=document.getElementById('rankBadge');badge.textContent=rk;badge.className='rank-badge '+rk;
   AE.stopBGM();AE.playGameOver();
   const hsEl=document.getElementById('highScore');hsEl.textContent=highScore.toLocaleString();
@@ -480,7 +480,7 @@ function setMode(mode){
   document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('active'));
   document.querySelector('[data-mode="'+mode+'"]').classList.add('active');
   document.getElementById('marqueeSub').textContent=
-    mode==='normal'?'■ 街机对战风格 ■':mode==='sprint'?'⚡ 40 行竞速模式 ⚡':'📅 每日挑战模式 📅';
+    mode==='normal'?'■ ARCADE EDITION ■':mode==='sprint'?'⚡ 40L SPRINT MODE ⚡':'📅 DAILY CHALLENGE 📅';
   document.getElementById('sprintBlock').style.display=mode==='sprint'?'':'none';
   document.getElementById('sprintBestBlock').style.display=mode==='sprint'?'':'none';
   startGame();
